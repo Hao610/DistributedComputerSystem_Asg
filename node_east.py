@@ -4,7 +4,7 @@ import time
 
 app = Flask(__name__)
 
-# 你的专属 URL 和 Key
+# Supabase Credentials
 SUPABASE_URL = "https://prgjqwtovzeabuguvwyh.supabase.co"
 SUPABASE_KEY = "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpc3MiOiJzdXBhYmFzZSIsInJlZiI6InByZ2pxd3RvdnplYWJ1Z3V2d3loIiwicm9sZSI6InNlcnZpY2Vfcm9sZSIsImlhdCI6MTc3NzUxOTMwNCwiZXhwIjoyMDkzMDk1MzA0fQ.0Gt5aSSBrK-ramNp9dWx6_F2DxJ1tQyz2UPZD5f_5iA"
 
@@ -21,10 +21,9 @@ def health_check():
 @app.route('/api/sales')
 def get_east_sales():
     try:
+        # Fetch data from Supabase
         response = (supabase.table("node_east")
                     .select("*")
-                    # 如果你的表本身就是按地区分片的，其实可以不加这个 eq
-                    # 或者改用 ilike 模糊匹配
                     .order("order_date", desc=True)
                     .limit(10000)
                     .execute())
@@ -39,6 +38,7 @@ def get_east_sales():
 def add_order():
     new_order = request.json
     try:
+        # Insert new order into Supabase
         result = supabase.table("node_east").insert(new_order).execute()
         if result.data:
             return jsonify({"status": "success", "message": "Successfully saved to Supabase"})

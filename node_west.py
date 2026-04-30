@@ -4,7 +4,7 @@ import time
 
 app = Flask(__name__)
 
-# 你的专属 URL 和 Key
+# Supabase Credentials
 SUPABASE_URL = "https://prgjqwtovzeabuguvwyh.supabase.co"
 SUPABASE_KEY = "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpc3MiOiJzdXBhYmFzZSIsInJlZiI6InByZ2pxd3RvdnplYWJ1Z3V2d3loIiwicm9sZSI6InNlcnZpY2Vfcm9sZSIsImlhdCI6MTc3NzUxOTMwNCwiZXhwIjoyMDkzMDk1MzA0fQ.0Gt5aSSBrK-ramNp9dWx6_F2DxJ1tQyz2UPZD5f_5iA"
 
@@ -21,6 +21,7 @@ def health_check():
 @app.route('/api/sales')
 def get_west_sales():
     try:
+        # Fetch data from Supabase
         response = (supabase.table("node_west")
                     .select("*")
                     .order("order_date", desc=True)
@@ -37,6 +38,7 @@ def get_west_sales():
 def add_order():
     new_order = request.json
     try:
+        # Insert new order into Supabase
         result = supabase.table("node_west").insert(new_order).execute()
         if result.data:
             return jsonify({"status": "success", "message": "Successfully saved to Supabase"})
