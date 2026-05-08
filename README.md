@@ -1,4 +1,4 @@
-# 🛒 Distributed E-commerce Analytics Platform
+# 🛒 Cloud-Based Distributed E-commerce Analytics Platform
 
 This project is a distributed e-commerce data analytics platform. It shards business data between West and East Malaysia and utilizes distributed aggregation techniques to provide a real-time, high-performance, and high-availability business analysis dashboard.
 
