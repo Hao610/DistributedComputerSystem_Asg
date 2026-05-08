@@ -5,8 +5,8 @@ import time
 app = Flask(__name__)
 
 # Supabase Credentials
-SUPABASE_URL = "https://prgjqwtovzeabuguvwyh.supabase.co"
-SUPABASE_KEY = "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpc3MiOiJzdXBhYmFzZSIsInJlZiI6InByZ2pxd3RvdnplYWJ1Z3V2d3loIiwicm9sZSI6InNlcnZpY2Vfcm9sZSIsImlhdCI6MTc3NzUxOTMwNCwiZXhwIjoyMDkzMDk1MzA0fQ.0Gt5aSSBrK-ramNp9dWx6_F2DxJ1tQyz2UPZD5f_5iA"
+SUPABASE_URL = "YOUR_SUPABASE_URL_HERE"
+SUPABASE_KEY = "YOUR_SUPABASE_KEY_HERE"
 
 supabase: Client = create_client(SUPABASE_URL, SUPABASE_KEY)
 

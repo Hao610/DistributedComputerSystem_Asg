@@ -1,0 +1,5 @@
+.idea/
+*.sqlite
+__pycache__/
+gemini-code-*.py
+.env
