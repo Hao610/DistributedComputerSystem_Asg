@@ -110,6 +110,6 @@ streamlit run dashboard.py
 ## 🤝 Let's Connect!
 I am actively looking for opportunities in Software Engineering, Backend Development, and Data Analytics. If you find this project interesting, feel free to reach out to me!
 
-[![LinkedIn](https://img.shields.io/badge/LinkedIn-Connect-blue?style=for-the-badge&logo=linkedin)](https://linkedin.com/in/your-profile-link-here)
+[![LinkedIn](https://img.shields.io/badge/LinkedIn-Connect-blue?style=for-the-badge&logo=linkedin)](https://linkedin.com/in/loi-chiang-hao)
 
 *If you liked this project, please consider giving it a ⭐!*
